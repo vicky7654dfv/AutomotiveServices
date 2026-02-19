@@ -16,13 +16,10 @@ body {
     background-color: var(--bg-rich);
     color: var(--text-main);
     line-height: 1.6;
-    
-    /* STRICT NON-SCROLLABLE SETUP FOR ALL VIEWS */
     height: 100vh;
-    height: 100dvh; /* For mobile browser UI bars */
+    height: 100dvh; 
     width: 100vw;
     overflow: hidden; 
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +55,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(40%); /* Slightly muted for error page */
+    filter: grayscale(40%); 
 }
 
 .overlay-gradient {
@@ -68,7 +65,7 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at center, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.95) 100%);
-    backdrop-filter: blur(4px); /* Slight blur to draw focus to the center */
+    backdrop-filter: blur(4px); 
 }
 
 /* --- Main Error Container --- */
@@ -144,6 +141,7 @@ body {
     font-size: 0.95rem;
     font-family: var(--font-main);
     text-decoration: none;
+    outline: none;
 }
 
 .btn i {
@@ -191,7 +189,6 @@ body {
 
 /* =========================================
    MEDIA QUERIES (STRICT ORDER)
-   Note: overflow:hidden and height:100vh are inherited globally
 ========================================= */
 
 /* --- 1024px (Tablet/Laptop) --- */

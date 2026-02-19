@@ -38,7 +38,7 @@
         </p>
 
         <div class="btn-group">
-            <button onclick="history.back()" class="btn btn-outline">
+            <button class="btn btn-outline" id="go-back-btn">
                 <i class="fa-solid fa-arrow-left"></i> Go Back
             </button>
             <a href="../index.html" class="btn btn-glow">
@@ -48,7 +48,7 @@
     </div>
 
     <script>
-        // --- Page Loader & Transitions ---
+        
         window.addEventListener('load', () => {
             const loader = document.getElementById('page-loader');
             loader.style.opacity = '0';
@@ -57,7 +57,6 @@
             }, 300);
         });
 
-        // Add transition effect to the Return Home link
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -71,16 +70,22 @@
             });
         });
 
-        // Add transition effect for the Go Back button
-        const backBtn = document.querySelector('button[onclick="history.back()"]');
+        const backBtn = document.getElementById('go-back-btn'); 
         if (backBtn) {
-            backBtn.onclick = function(e) {
+            backBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const loader = document.getElementById('page-loader');
                 loader.style.display = 'flex';
                 setTimeout(() => { loader.style.opacity = '1'; }, 10);
-                setTimeout(() => { history.back(); }, 400); 
-            };
+                
+                setTimeout(() => { 
+                    if (window.history.length > 1 && document.referrer !== "") {
+                        window.history.go(-1); 
+                    } else {
+                        window.location.href = '../index.html'; 
+                    }
+                }, 400); 
+            });
         }
     </script>
 </body>
