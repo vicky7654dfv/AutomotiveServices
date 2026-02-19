@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Elite Automotive Care</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23f59e0b' d='M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z'/></svg>">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="./assets/Header/logo.webp" alt="Stackly Logo" class="loader-img">
+            <p>Loading Experience...</p>
+        </div>
+    </div>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="index.html">
+                <img src="./assets/Header/logo.webp" alt="Stackly Logo">
+            </a>
+        </div>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="./pages/home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./pages/about.html">About Us</a></li>
+                <li><a href="./pages/dashboard.html">DashBoard</a></li>
+                <li><a href="./pages/services.html">Services</a></li>
+                <li><a href="./pages/faq.html">FAQ</a></li>
+                <li><a href="./pages/contact.html">Contact</a></li>
+                <li><a href="./pages/signup.html">Sign Up</a></li>
+                <li><a href="./pages/login.html">Login</a></li>
+            </ul>
+        </nav>
+        
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="slider-container">
+                <div class="slide active">
+                    <div class="overlay-dark"></div>
+                    <img src="./assets/Banner1/slide1.webp" alt="Luxury Car 1" loading="lazy">
+                </div>
+                <div class="slide">
+                    <div class="overlay-dark"></div>
+                    <img src="./assets/Banner1/slide2.webp" alt="Luxury Car 2" loading="lazy">
+                </div>
+                <div class="slide">
+                    <div class="overlay-dark"></div>
+                    <img src="./assets/Banner1/slide3.webp" alt="Luxury Car 3" loading="lazy">
+                </div>
+            </div>
+
+            <div class="container hero-layout">
+                <div class="hero-text-area fade-in">
+                    <h1>Precision. Power.<br>Perfection.</h1>
+                    <p>Redefining automotive care with elite craftsmanship.</p>
+                </div>
+                <div class="hero-btn-area fade-in">
+                    <a href="./pages/error.html" class="btn btn-glow">Book Service</a>
+                    <a href="./pages/error.html" class="btn btn-outline">View Plans</a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="marquee-section fade-in">
+            <div class="container">
+                <div class="section-header center-aligned">
+                    <h2>Our Expertise</h2>
+                    <p class="marquee-desc">Comprehensive solutions for every vehicle need. Our expert technicians combine decades of experience with cutting-edge technology to deliver unparalleled automotive perfection, ensuring your vehicle performs at its absolute peak.</p>
+                </div>
+                
+                <div class="marquee-wrapper">
+                    <div class="track speed-slow">
+                        <span>Automotive Maintenance</span>
+                        <span>Vehicle Restoration</span>
+                        <span>Wheels & Tires</span>
+                        <span>Auto Body Repair</span>
+                        <span>Ceramic Coating</span>
+                        <span>Automotive Maintenance</span>
+                        <span>Vehicle Restoration</span>
+                        <span>Wheels & Tires</span>
+                        <span>Auto Body Repair</span>
+                        <span>Ceramic Coating</span>
+                    </div>
+                </div>
+
+                <div class="marquee-wrapper">
+                    <div class="track speed-fast">
+                        <span>Detailing</span>
+                        <span>Mechanical</span>
+                        <span>Car Care</span>
+                        <span>Elementor</span>
+                        <span>Drive-through Car Wash</span>
+                        <span>Self-service Car Wash</span>
+                        <span>Detailing</span>
+                        <span>Mechanical</span>
+                        <span>Car Care</span>
+                        <span>Elementor</span>
+                        <span>Drive-through Car Wash</span>
+                        <span>Self-service Car Wash</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="special-grid-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What Makes Us Special?</h2>
+                    <p>A gallery of our finest engineering and aesthetic achievements.</p>
+                </div>
+
+                <div class="masonry-grid">
+                    <div class="grid-col fade-in">
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/1.webp" alt="Service 1" loading="lazy">
+                            <div class="visible-title">Engine Tuning</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/2.webp" alt="Service 2" loading="lazy">
+                            <div class="visible-title">Interior Detailing</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/3.webp" alt="Service 3" loading="lazy">
+                            <div class="visible-title">Paint Protection</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-col fade-in">
+                        <div class="grid-item video-item">
+                            <div class="overlay-gradient"></div>
+                            <video src="./assets/SpecialGrid/bgVid.mp4" autoplay muted loop playsinline loading="lazy"></video>
+                            <div class="visible-title">Live Restoration</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Watch Video</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/4.webp" alt="Service 4" loading="lazy">
+                            <div class="visible-title">Wheel Alignment</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/5.webp" alt="Service 5" loading="lazy">
+                            <div class="visible-title">Classic Repair</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-col fade-in">
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/6.webp" alt="Service 6" loading="lazy">
+                            <div class="visible-title">Custom Mods</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/7.webp" alt="Service 7" loading="lazy">
+                            <div class="visible-title">Diagnostics</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SpecialGrid/8.webp" alt="Service 8" loading="lazy">
+                            <div class="visible-title">Upholstery</div>
+                            <div class="hover-content">
+                                <a href="./pages/error.html" class="btn btn-sm">Explore Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="split-feature-section">
+            <div class="container feature-container">
+                <div class="feature-left fade-in">
+                    <h1>Advanced Diagnostics & Repair</h1>
+                    <p class="elite-para">We utilize state-of-the-art technology to diagnose issues with pinpoint accuracy. From vintage classics to modern supercars, we handle it all.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Computerized Engine Analysis</li>
+                        <li><i class="fa-solid fa-check"></i> Precision Suspension Tuning</li>
+                        <li><i class="fa-solid fa-check"></i> Hybrid & Electric Systems</li>
+                        <li><i class="fa-solid fa-check"></i> Performance Upgrades</li>
+                    </ul>
+                    <div class="btn-group">
+                        <a href="./pages/error.html" class="btn btn-glow">Learn More</a>
+                        <a href="./pages/error.html" class="btn btn-outline">Our Tech</a>
+                    </div>
+                </div>
+
+                <div class="feature-right fade-in">
+                    <div class="diagonal-wrapper">
+                        <div class="diag-img top-left styled-box">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SplitContainer/11.webp" alt="Detail 1" loading="lazy">
+                        </div>
+
+                        <div class="main-video-box styled-box">
+                            <div class="overlay-gradient"></div>
+                            <video src="./assets/SplitContainer/centrevid.mp4" autoplay muted loop playsinline loading="lazy"></video>
+                        </div>
+
+                        <div class="diag-img bottom-right styled-box">
+                            <div class="overlay-gradient"></div>
+                            <img src="./assets/SplitContainer/22.webp" alt="Detail 2" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="stats-parallax-section">
+            <div class="bg-layer">
+                <img src="./assets/StatsSection/bg.webp" alt="Workshop Background" loading="lazy">
+                <div class="overlay-dark-03"></div>
+            </div>
+            <div class="overlay-rich"></div>
+            
+            <div class="container stats-content fade-in">
+                <h3>Stackly Performance</h3>
+                <h1><span class="accent-color">Driven</span> By Results</h1>
+                <p class="elite-para-center">
+                    Over a decade of excellence in the automotive industry, serving an exclusive clientele who demand nothing but perfection for their machines.
+                </p>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-value">
+                            <span class="count-up highlight-num" data-target="98">0</span><span class="highlight-sym">%</span>
+                        </div>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">
+                            <span class="count-up highlight-num" data-target="500">0</span><span class="highlight-sym">+</span>
+                        </div>
+                        <p>Cars Restored</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">
+                            <span class="count-up highlight-num" data-target="24">0</span><span class="highlight-sym">/7</span>
+                        </div>
+                        <p>Emergency Support</p>
+                    </div>
+                </div>
+
+                <div class="specialties-tags">
+                    <span>Ferrari</span>
+                    <span>Porsche</span>
+                    <span>Lamborghini</span>
+                    <span>McLaren</span>
+                </div>
+
+                <a href="./pages/error.html" class="btn btn-glow">Join The Elite</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="./assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    Defining the future of luxury automotive care with precision, passion, and unparalleled expertise. We are committed to maintaining the highest standards of engineering excellence.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./pages/home2.html">Home 2</a></li>
+                    <li><a href="./pages/about.html">About Us</a></li>
+                    <li><a href="./pages/services.html">Services</a></li>
+                    <li><a href="./pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="./pages/error.html">Detailing</a></li>
+                    <li><a href="./pages/error.html">Restoration</a></li>
+                    <li><a href="./pages/error.html">Tuning</a></li>
+                    <li><a href="./pages/error.html">Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 800 555 0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Join our exclusive mailing list for updates.</p>
+                <form action="./pages/error.html" class="subscribe-form">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <button type="submit" class="btn btn-glow full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./pages/error.html" class="socialLink" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./pages/error.html" class="socialLink" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./pages/error.html" class="socialLink" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./pages/error.html" class="socialLink" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 300);
+        });
+
+        
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            if(navLinks.classList.contains('showMenu')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const slideInterval = 3500;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, slideInterval);
+
+        
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+
+        
+        const countUpElems = document.querySelectorAll('.count-up');
+        const countUpObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        countUpElems.forEach(elem => countUpObserver.observe(elem));
+    </script>
+</body>
+</html>
