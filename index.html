@@ -14,6 +14,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
 
     <div id="page-loader">
         <div class="loader-content">
@@ -25,7 +30,7 @@
     <header class="headerWrap" id="main-header">
         <div class="imgWrap">
             <a href="index.html">
-                <img src="./assets/Header/logo.webp" alt="Stackly Logo">
+                <img src="./assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
             </a>
         </div>
         
@@ -40,7 +45,7 @@
             <ul>
                 <li class="dropdown" id="home-dropdown">
                     <div class="dropdownHeader">
-                        <a href="javascript:void(0)" class="homePageLink">Home</a>
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
                         <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
@@ -53,10 +58,15 @@
                 <li><a href="./pages/about.html">About Us</a></li>
                 <li><a href="./pages/dashboard.html">DashBoard</a></li>
                 <li><a href="./pages/services.html">Services</a></li>
-                <li><a href="./pages/faq.html">FAQ</a></li>
+                <li><a href="./pages/blog.html">Blog</a></li>
                 <li><a href="./pages/contact.html">Contact</a></li>
                 <li><a href="./pages/signup.html">Sign Up</a></li>
                 <li><a href="./pages/login.html">Login</a></li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
         
@@ -249,18 +259,21 @@
                 <div class="feature-right fade-in">
                     <div class="diagonal-wrapper">
                         <div class="diag-img top-left styled-box">
-                            <div class="overlay-gradient"></div>
+                            <div class="overlay-gradient diag-overlay"></div>
                             <img src="./assets/SplitContainer/11.webp" alt="Detail 1" loading="lazy">
+                            <span class="media-caption">Laser Alignment</span>
                         </div>
 
                         <div class="main-video-box styled-box">
-                            <div class="overlay-gradient"></div>
+                            <div class="overlay-gradient diag-overlay"></div>
                             <video src="./assets/SplitContainer/centrevid.mp4" autoplay muted loop playsinline loading="lazy"></video>
+                            <span class="media-caption">4K Diagnostic Scan</span>
                         </div>
 
                         <div class="diag-img bottom-right styled-box">
-                            <div class="overlay-gradient"></div>
+                            <div class="overlay-gradient diag-overlay"></div>
                             <img src="./assets/SplitContainer/22.webp" alt="Detail 2" loading="lazy">
+                            <span class="media-caption">Hybrid System Check</span>
                         </div>
                     </div>
                 </div>
@@ -321,7 +334,7 @@
             <div class="box">
                 <div class="logoContainer">
                     <div class="logo">
-                        <img src="./assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo">
+                        <img src="./assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo site-logo">
                     </div>
                 </div>
                 <p class="footer-desc">
@@ -385,7 +398,6 @@
             }, 300);
         });
 
-        
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -399,26 +411,31 @@
             });
         });
 
-        
+        // Hamburger Menu Logic
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const closeBtn = document.getElementById('close-btn');
         const navLinks = document.getElementById('nav-links');
         const menuOverlay = document.getElementById('menu-overlay');
         const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
         const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
 
         function openMenu() {
             navLinks.classList.add('showMenu');
             menuOverlay.style.display = 'block';
+            body.classList.add('menu-open'); 
         }
 
         function closeMenu() {
             navLinks.classList.remove('showMenu');
             menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open'); 
             dropdownMenu.classList.remove('showDropdown');
         }
 
-        hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             if(navLinks.classList.contains('showMenu')) {
                 closeMenu();
             } else {
@@ -429,13 +446,49 @@
         closeBtn.addEventListener('click', closeMenu);
         menuOverlay.addEventListener('click', closeMenu);
 
+        // Allow clicking either the chevron OR the word "Home" to toggle the dropdown
         dropdownToggleBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             dropdownMenu.classList.toggle('showDropdown');
         });
 
+        homeNavLink.addEventListener('click', (e) => {
+            if(window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // Theme Toggle Logic with localStorage
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // Set initial icon based on local storage
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
         
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if(document.body.classList.contains('light-theme')){
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('stackly-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('stackly-theme', 'dark');
+            }
+        });
+
+        // Slider
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
         const slideInterval = 3500;
@@ -448,7 +501,7 @@
 
         setInterval(nextSlide, slideInterval);
 
-        
+        // Sticky Header
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -458,7 +511,7 @@
             }
         });
 
-        
+        // Fade in Animation
         const fadeElems = document.querySelectorAll('.fade-in');
         const fadeInObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -470,7 +523,7 @@
         }, { threshold: 0.1 });
         fadeElems.forEach(elem => fadeInObserver.observe(elem));
 
-        
+        // Number Counter Animation
         const countUpElems = document.querySelectorAll('.count-up');
         const countUpObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {

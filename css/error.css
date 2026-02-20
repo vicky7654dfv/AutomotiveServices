@@ -1,264 +1,299 @@
+/* --- Global Variables --- */
 :root {
-            --bg-rich: #050505;
-            --primary-silver: #e2e8f0;
-            --accent-color: #f59e0b; 
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --font-main: 'Outfit', sans-serif;
-            --transition: all 0.3s ease-in-out;
-        }
+    --bg-rich: #050505;
+    --primary-silver: #e2e8f0;
+    --accent-color: #f59e0b; 
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-main: 'Outfit', sans-serif;
+    --transition: all 0.3s ease-in-out;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+/* Light Theme Variables */
+body.light-theme {
+    --bg-rich: #f4f4f5; 
+    --primary-silver: #0f172a; 
+    --accent-color: #f59e0b;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+}
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-rich);
-            color: var(--text-main);
-            line-height: 1.6;
-            
-            /* STRICT NON-SCROLLABLE SETUP FOR ALL VIEWS */
-            height: 100vh;
-            height: 100dvh; /* For mobile browser UI bars */
-            width: 100vw;
-            overflow: hidden; 
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* --- Loader --- */
-        #page-loader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(5, 5, 5, 0.8); z-index: 9999;
-            display: flex; justify-content: center; align-items: center;
-            transition: opacity 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .loader-content { text-align: center; }
-        .loader-img { height: 60px; margin: 0 auto 15px; animation: pulse 1.5s infinite; }
-        .loader-content p { color: var(--accent-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-rich);
+    color: var(--text-main);
+    line-height: 1.6;
+    
+    /* STRICT NON-SCROLLABLE SETUP FOR ALL VIEWS */
+    height: 100vh;
+    height: 100dvh; 
+    width: 100vw;
+    overflow: hidden; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+/* --- Loader --- */
+#page-loader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(5, 5, 5, 0.8); z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+body.light-theme #page-loader { background-color: rgba(244, 244, 245, 0.9); }
 
-        /* --- Background Image & Overlays --- */
-        .page-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+.loader-content { text-align: center; }
+.loader-img { height: 60px; margin: 0 auto 15px; animation: pulse 1.5s infinite; }
+body.light-theme .loader-img { filter: brightness(0); }
+.loader-content p { color: var(--accent-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        .page-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            filter: grayscale(40%); /* Slightly muted for error page */
-        }
+@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 
-        .overlay-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.95) 100%);
-            backdrop-filter: blur(4px); /* Slight blur to draw focus to the center */
-        }
+/* --- Background Image & Overlays --- */
+.page-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
-        /* --- Main Error Container --- */
-        .error-container {
-            width: 100%;
-            max-width: 700px;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            z-index: 2;
-        }
+.page-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(40%); 
+}
 
-        .brand-logo {
-            height: 45px;
-            margin-bottom: 2vh;
-            opacity: 0.8;
-        }
+.overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.95) 100%);
+    backdrop-filter: blur(4px); 
+    transition: background 0.3s ease;
+}
 
-        .error-code {
-            font-size: 10rem;
-            font-weight: 900;
-            line-height: 1;
-            margin: 0;
-            background: linear-gradient(to bottom, #ffffff 0%, var(--text-muted) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            letter-spacing: 5px;
-        }
+/* Light Theme Overlays */
+body.light-theme .overlay-gradient {
+    background: radial-gradient(circle at center, rgba(244,244,245,0.85) 0%, rgba(244,244,245,1) 100%);
+}
 
-        .error-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2vh;
-        }
+body.light-theme .brand-logo {
+    filter: brightness(0);
+}
 
-        .error-message {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto 4vh;
-        }
+body.light-theme .error-code {
+    background: linear-gradient(to bottom, #0f172a 0%, #94a3b8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
-        /* --- Buttons --- */
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
+/* --- Main Error Container --- */
+.error-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 30px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            border: 1px solid transparent;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-            font-family: var(--font-main);
-            text-decoration: none;
-        }
+.brand-logo {
+    height: 45px;
+    margin-bottom: 2vh;
+    opacity: 0.8;
+    transition: filter 0.3s ease;
+}
 
-        .btn i {
-            font-size: 1.1rem;
-        }
+.error-code {
+    font-size: 10rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffffff 0%, var(--text-muted) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    letter-spacing: 5px;
+    transition: all 0.3s ease;
+}
 
-        .btn-glow {
-            background-color: var(--accent-color);
-            color: var(--bg-rich);
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
-        }
+.error-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2vh;
+}
 
-        .btn-glow:hover {
-            background-color: white;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-            transform: translateY(-2px);
-        }
+.error-message {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 4vh;
+}
 
-        /* --- Entrance Animation --- */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease 0.2s forwards;
-        }
+/* --- Buttons --- */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    font-family: var(--font-main);
+    text-decoration: none;
+    outline: none;
+}
 
-        /* =========================================
-           MEDIA QUERIES (STRICT ORDER)
-           Note: overflow:hidden and height:100vh are inherited globally
-        ========================================= */
+.btn i {
+    font-size: 1.1rem;
+}
 
-        /* --- 1024px (Tablet/Laptop) --- */
-        @media (max-width: 1024px) {
-            .error-code {
-                font-size: 8rem;
-            }
-            .error-title {
-                font-size: 1.8rem;
-            }
-        }
+.btn-glow {
+    background-color: var(--accent-color);
+    color: #050505;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
 
-        /* --- 768px (Tablet Portrait) --- */
-        @media (max-width: 768px) {
-            .error-container {
-                padding: 20px;
-            }
-            .brand-logo {
-                height: 40px;
-            }
-            .error-code {
-                font-size: 7rem;
-            }
-            .error-title {
-                font-size: 1.5rem;
-            }
-            .error-message {
-                font-size: 1rem;
-                padding: 0 10px;
-            }
-            .btn-group {
-                gap: 15px;
-            }
-            .btn {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-        }
+.btn-glow:hover {
+    background-color: var(--primary-silver);
+    color: var(--bg-rich);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
 
-        /* --- 425.6px (Large Mobile) --- */
-        @media (max-width: 426px) {
-            .error-code {
-                font-size: 6rem;
-            }
-            .error-title {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-            .error-message {
-                font-size: 0.95rem;
-                margin-bottom: 30px;
-            }
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-                gap: 12px;
-            }
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                padding: 14px 20px;
-            }
-        }
+body.light-theme .btn-glow:hover {
+    background-color: #0f172a;
+    color: white;
+}
 
-        /* --- 375.2px (Medium Mobile) --- */
-        @media (max-width: 376px) {
-            .brand-logo {
-                height: 35px;
-            }
-            .error-code {
-                font-size: 5rem;
-            }
-            .error-title {
-                font-size: 1.15rem;
-            }
-            .error-message {
-                font-size: 0.85rem;
-                margin-bottom: 25px;
-            }
-            .btn {
-                padding: 12px 20px;
-                font-size: 0.85rem;
-            }
-        }
+/* --- Entrance Animation --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MEDIA QUERIES (STRICT ORDER)
+========================================= */
+
+/* --- 1024px (Tablet/Laptop) --- */
+@media (max-width: 1024px) {
+    .error-code {
+        font-size: 8rem;
+    }
+    .error-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- 768px (Tablet Portrait) --- */
+@media (max-width: 768px) {
+    .error-container {
+        padding: 20px;
+    }
+    .brand-logo {
+        height: 40px;
+    }
+    .error-code {
+        font-size: 7rem;
+    }
+    .error-title {
+        font-size: 1.5rem;
+    }
+    .error-message {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- 425.6px (Large Mobile) --- */
+@media (max-width: 426px) {
+    .error-code {
+        font-size: 6rem;
+    }
+    .error-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    .error-message {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+    .btn-group {
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 20px;
+    }
+}
+
+/* --- 375.2px (Medium Mobile) --- */
+@media (max-width: 376px) {
+    .brand-logo {
+        height: 35px;
+    }
+    .error-code {
+        font-size: 5rem;
+    }
+    .error-title {
+        font-size: 1.15rem;
+    }
+    .error-message {
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+    }
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+}
