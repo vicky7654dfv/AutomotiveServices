@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Contact Us</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23f59e0b' d='M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z'/></svg>">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="loader-img">
+            <p>Loading Experience...</p>
+        </div>
+    </div>
+
+    <div class="page-bg">
+        <img src="../assets/Banner1/slide3.webp" alt="Stackly Background">
+        <div class="overlay-gradient"></div>
+    </div>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
+            </a>
+        </div>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="dashboard.html">DashBoard</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main class="contact-main">
+        
+        <section class="contact-header-section fade-in">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p>Connect with our elite master technicians and support team. We're here to elevate your automotive experience.</p>
+            </div>
+        </section>
+
+        <section class="contact-content-section container">
+            
+            <div class="contact-info-side fade-in-up">
+                <h2>Contact Information</h2>
+                <p class="info-desc">Reach out directly or visit our premium facility. We prioritize every client with utmost confidentiality and care.</p>
+                
+                <ul class="contact-details-list">
+                    <li>
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="text-box">
+                            <strong>Headquarters</strong>
+                            <span>100 Elite Motorway, Los Angeles, CA 90210</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div class="text-box">
+                            <strong>VIP Hotline</strong>
+                            <span>+1 800 555 0199</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="text-box">
+                            <strong>Email Address</strong>
+                            <span>vip@stackly.auto</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="social-connections">
+                    <strong>Connect With Us</strong>
+                    <div class="media">
+                        <a href="error.html" class="socialLink"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="error.html" class="socialLink"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="error.html" class="socialLink"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="error.html" class="socialLink"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <a href="https://maps.app.goo.gl/rn1GGnLcEyUYkN9E8" target="_blank" class="map-link-box">
+                    <div class="map-overlay"></div>
+                    <div class="map-content">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>View Exact Location</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-form-side fade-in-up" style="animation-delay: 0.2s;">
+                <h2>Send a Message</h2>
+                <form id="contact-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="fullname">Full Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" autocomplete="name">
+                        </div>
+                        <span class="error-msg" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="vip@example.com" autocomplete="email">
+                        </div>
+                        <span class="error-msg" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="10-digit number" autocomplete="tel">
+                        </div>
+                        <span class="error-msg" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Type of Service Needed <span class="required">*</span></label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fa-solid fa-wrench"></i>
+                            <select id="service" name="service">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="diagnostics">Advanced Diagnostics</option>
+                                <option value="restoration">Vehicle Restoration</option>
+                                <option value="tuning">Engine Tuning</option>
+                                <option value="detailing">Premium Detailing</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-caret"></i>
+                        </div>
+                        <span class="error-msg" id="service-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="remarks">Remarks <span class="required">*</span></label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="fa-regular fa-comment-dots"></i>
+                            <textarea id="remarks" name="remarks" placeholder="Provide details about your vehicle and requirements..."></textarea>
+                        </div>
+                        <span class="error-msg" id="remarks-error"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="verify-btn" class="btn btn-outline verify-btn">
+                            <i class="fa-solid fa-shield-halved"></i> Verify Identity
+                        </button>
+                        <span class="error-msg" id="verify-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-glow full-width submit-btn">Submit Request</button>
+
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo site-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    Defining the future of luxury automotive care with precision, passion, and unparalleled expertise. We are committed to maintaining the highest standards of engineering excellence.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="error.html">Detailing</a></li>
+                    <li><a href="error.html">Restoration</a></li>
+                    <li><a href="error.html">Tuning</a></li>
+                    <li><a href="error.html">Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 800 555 0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Join our exclusive mailing list for updates.</p>
+                <form action="error.html" class="subscribe-form">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <button type="submit" class="btn btn-glow full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="error.html" class="socialLink" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="error.html" class="socialLink" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="error.html" class="socialLink" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="error.html" class="socialLink" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Page Loader & Transitions ---
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript') && !href.startsWith('http')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        // --- Hamburger Menu Logic ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+            body.classList.add('menu-open'); 
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open'); 
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if(navLinks.classList.contains('showMenu')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        homeNavLink.addEventListener('click', (e) => {
+            if(window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // --- Theme Toggle Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if(document.body.classList.contains('light-theme')){
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('stackly-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('stackly-theme', 'dark');
+            }
+        });
+
+        // --- Sticky Header ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // --- Fade in Animation ---
+        const fadeElems = document.querySelectorAll('.fade-in, .fade-in-up');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+
+
+        // --- Contact Form Validation Logic ---
+        const form = document.getElementById('contact-form');
+        const fullName = document.getElementById('fullname');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const service = document.getElementById('service');
+        const remarks = document.getElementById('remarks');
+        const verifyBtn = document.getElementById('verify-btn');
+        
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const phoneError = document.getElementById('phone-error');
+        const serviceError = document.getElementById('service-error');
+        const remarksError = document.getElementById('remarks-error');
+        const verifyError = document.getElementById('verify-error');
+
+        let isVerified = false;
+
+        // Phone number strictly numeric & max 10 logic on input
+        phone.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+        });
+
+        // Verification Button Logic
+        verifyBtn.addEventListener('click', () => {
+            isVerified = true;
+            verifyBtn.classList.add('verified-state');
+            verifyBtn.innerHTML = '<i class="fa-solid fa-check-circle"></i> Identity Verified';
+            verifyError.innerText = '';
+        });
+
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        const clearErrors = () => {
+            nameError.innerText = '';
+            emailError.innerText = '';
+            phoneError.innerText = '';
+            serviceError.innerText = '';
+            remarksError.innerText = '';
+            verifyError.innerText = '';
+            document.querySelectorAll('.input-wrapper').forEach(wrapper => {
+                wrapper.classList.remove('error-border');
+            });
+        };
+
+        const showError = (element, errorSpan, message) => {
+            errorSpan.innerText = message;
+            element.parentElement.classList.add('error-border');
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            clearErrors();
+            let isFormValid = true;
+
+            // Full Name Check
+            if (fullName.value.trim() === '') {
+                showError(fullName, nameError, 'Full name is mandatory');
+                isFormValid = false;
+            }
+
+            // Email Check
+            if (email.value.trim() === '') {
+                showError(email, emailError, 'Email is mandatory');
+                isFormValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, emailError, 'Please enter a valid email address');
+                isFormValid = false;
+            }
+
+            // Phone Check (Optional, but if filled must be exactly 10 digits)
+            if (phone.value.trim() !== '') {
+                if (phone.value.length !== 10) {
+                    showError(phone, phoneError, 'Phone number must be exactly 10 digits');
+                    isFormValid = false;
+                }
+            }
+
+            // Service Select Check
+            if (service.value === '') {
+                showError(service, serviceError, 'Please select a type of service');
+                isFormValid = false;
+            }
+
+            // Remarks Check
+            if (remarks.value.trim() === '') {
+                showError(remarks, remarksError, 'Remarks are mandatory');
+                isFormValid = false;
+            }
+
+            // Verify Check
+            if (!isVerified) {
+                verifyError.innerText = 'Please click the Verify button to proceed';
+                isFormValid = false;
+            }
+
+            // Successful Navigation
+            if (isFormValid) {
+                const loader = document.getElementById('page-loader');
+                loader.style.display = 'flex';
+                setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                setTimeout(() => { window.location.href = 'error.html'; }, 400); 
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Stackly Automotive</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <nav class="dash-topbar">
+        <div class="dash-logo">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
+            </a>
+        </div>
+        
+        <div class="dash-actions">
+            <button id="theme-toggle-btn" aria-label="Toggle Theme">Toggle Theme</button>
+            <a href="../index.html" class="exit-btn">Exit Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="dash-container">
+        
+        <div class="dashboard-header-area">
+            <h1 class="page-title">Dashboard</h1>
+            
+            <div class="dash-tabs" id="dash-tabs">
+                <button class="tab-btn active" data-target="analytics">Analytics</button>
+                <button class="tab-btn" data-target="orders">Orders</button>
+                <button class="tab-btn" data-target="users">Users</button>
+                <button class="tab-btn" data-target="messages">Messages</button>
+            </div>
+        </div>
+
+        <section id="analytics" class="dash-section active">
+            
+            <div class="section-header-flex">
+                <div class="section-text">
+                    <h2>Overview & Analytics</h2>
+                    <p>Monitor your shop's performance, revenue, and active projects.</p>
+                </div>
+                <a href="./error.html" class="btn-dash">Export Report</a>
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <span class="stat-label">Monthly Revenue</span>
+                        <h3>$124,500</h3>
+                        <p class="trend up">Up 12% from last month</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <span class="stat-label">Active Vehicles</span>
+                        <h3>24</h3>
+                        <p class="trend neutral">Steady workflow</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <span class="stat-label">Website Visits</span>
+                        <h3>8,402</h3>
+                        <p class="trend up">Up 5% this week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <span class="stat-label">VIP Consultations</span>
+                        <h3>18</h3>
+                        <p class="trend action-req">Requires attention</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-box main-chart">
+                    <div class="box-header">
+                        <h3>Revenue & Website Traffic (6 Months)</h3>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <div class="box-header">
+                        <h3>Service Distribution</h3>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="serviceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid custom-bars-grid">
+                
+                <div class="chart-box">
+                    <div class="box-header">
+                        <h3>Mechanic Workload Capacity</h3>
+                    </div>
+                    <div class="horizontal-bars">
+                        <div class="h-bar-item">
+                            <div class="h-bar-info"><span>Engine Rebuilds</span><span>85%</span></div>
+                            <div class="h-bar-track"><div class="h-bar-fill" style="width: 85%; background: var(--accent-color);"></div></div>
+                        </div>
+                        <div class="h-bar-item">
+                            <div class="h-bar-info"><span>Ceramic Coating</span><span>60%</span></div>
+                            <div class="h-bar-track"><div class="h-bar-fill" style="width: 60%; background: #38bdf8;"></div></div>
+                        </div>
+                        <div class="h-bar-item">
+                            <div class="h-bar-info"><span>Interior Detailing</span><span>40%</span></div>
+                            <div class="h-bar-track"><div class="h-bar-fill" style="width: 40%; background: #a855f7;"></div></div>
+                        </div>
+                        <div class="h-bar-item">
+                            <div class="h-bar-info"><span>Dyno Tuning</span><span>75%</span></div>
+                            <div class="h-bar-track"><div class="h-bar-fill" style="width: 75%; background: #2dd4bf;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-box alert-box">
+                    <div class="box-header">
+                        <h3>System Status</h3>
+                    </div>
+                    <ul class="system-list">
+                        <li><span class="status-indicator ok"></span> Main Server Online</li>
+                        <li><span class="status-indicator ok"></span> Database Synced</li>
+                        <li><span class="status-indicator ok"></span> Payment Gateway Active</li>
+                        <li><span class="status-indicator warn"></span> High API Latency Detected</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="orders" class="dash-section">
+            
+            <div class="section-header-flex">
+                <div class="section-text">
+                    <h2>Service Orders</h2>
+                    <p>Manage ongoing vehicle restorations, detailing, and tuning projects.</p>
+                </div>
+                <a href="./error.html" class="btn-dash">Create New Order</a>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Recent Orders</h3>
+                    <div class="table-actions">
+                        <a href="./error.html" class="btn-dash">Manage Orders</a>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Client Name</th>
+                                <th>Vehicle</th>
+                                <th>Service Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8012</td>
+                                <td>Arthur Pendelton</td>
+                                <td>1973 Porsche 911</td>
+                                <td>Full Restoration</td>
+                                <td>$85,000</td>
+                                <td><span class="badge badge-progress">In Progress</span></td>
+                                <td><a href="./error.html" class="action-link">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8013</td>
+                                <td>Diana Vance</td>
+                                <td>2022 McLaren 720S</td>
+                                <td>Dyno Tuning</td>
+                                <td>$3,500</td>
+                                <td><span class="badge badge-completed">Completed</span></td>
+                                <td><a href="./error.html" class="action-link">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8014</td>
+                                <td>Robert Sterling</td>
+                                <td>2024 Mercedes G-Wagon</td>
+                                <td>Ceramic Coating</td>
+                                <td>$2,200</td>
+                                <td><span class="badge badge-pending">Pending Drop-off</span></td>
+                                <td><a href="./error.html" class="action-link">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8015</td>
+                                <td>Sarah Jenkins</td>
+                                <td>1969 Ford Mustang</td>
+                                <td>Engine Rebuild</td>
+                                <td>$18,000</td>
+                                <td><span class="badge badge-progress">In Progress</span></td>
+                                <td><a href="./error.html" class="action-link">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8016</td>
+                                <td>Michael Chang</td>
+                                <td>2021 Audi GT</td>
+                                <td>Custom Fabrication</td>
+                                <td>$6,400</td>
+                                <td><span class="badge badge-progress">In Progress</span></td>
+                                <td><a href="./error.html" class="action-link">View Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="users" class="dash-section">
+            
+            <div class="section-header-flex">
+                <div class="section-text">
+                    <h2>Client Directory</h2>
+                    <p>Manage VIP clients, view contact details, and assess service history.</p>
+                </div>
+                <a href="./error.html" class="btn-dash">Add New Client</a>
+            </div>
+
+            <div class="users-grid">
+                <div class="user-card">
+                    <div class="user-avatar">AP</div>
+                    <div class="user-info">
+                        <h4>Arthur Pendelton</h4>
+                        <p class="user-email">arthur@investments.com</p>
+                        <p class="user-phone">Phone: +1 (310) 555-0192</p>
+                        <p class="user-history">Last Visit: Oct 12, 2025</p>
+                        <span class="vip-tag">VIP Gold Member</span>
+                    </div>
+                    <div class="user-stats">
+                        <div><span>Vehicles</span> <strong>3</strong></div>
+                        <div><span>Spent</span> <strong>$142k</strong></div>
+                    </div>
+                    <a href="./error.html" class="btn-dash full-width">View Profile</a>
+                </div>
+
+                <div class="user-card">
+                    <div class="user-avatar">DV</div>
+                    <div class="user-info">
+                        <h4>Diana Vance</h4>
+                        <p class="user-email">diana.v@racing.net</p>
+                        <p class="user-phone">Phone: +1 (213) 555-8834</p>
+                        <p class="user-history">Last Visit: Nov 02, 2025</p>
+                        <span class="standard-tag">Standard Client</span>
+                    </div>
+                    <div class="user-stats">
+                        <div><span>Vehicles</span> <strong>1</strong></div>
+                        <div><span>Spent</span> <strong>$12k</strong></div>
+                    </div>
+                    <a href="./error.html" class="btn-dash full-width">View Profile</a>
+                </div>
+
+                <div class="user-card">
+                    <div class="user-avatar">RS</div>
+                    <div class="user-info">
+                        <h4>Robert Sterling</h4>
+                        <p class="user-email">rob.sterling@corp.com</p>
+                        <p class="user-phone">Phone: +1 (415) 555-9021</p>
+                        <p class="user-history">Last Visit: Sep 28, 2025</p>
+                        <span class="vip-tag">VIP Platinum Member</span>
+                    </div>
+                    <div class="user-stats">
+                        <div><span>Vehicles</span> <strong>2</strong></div>
+                        <div><span>Spent</span> <strong>$55k</strong></div>
+                    </div>
+                    <a href="./error.html" class="btn-dash full-width">View Profile</a>
+                </div>
+
+                <div class="user-card">
+                    <div class="user-avatar">SJ</div>
+                    <div class="user-info">
+                        <h4>Sarah Jenkins</h4>
+                        <p class="user-email">s.jenkins99@mail.com</p>
+                        <p class="user-phone">Phone: +1 (818) 555-3329</p>
+                        <p class="user-history">Last Visit: Nov 05, 2025</p>
+                        <span class="standard-tag">Standard Client</span>
+                    </div>
+                    <div class="user-stats">
+                        <div><span>Vehicles</span> <strong>1</strong></div>
+                        <div><span>Spent</span> <strong>$18k</strong></div>
+                    </div>
+                    <a href="./error.html" class="btn-dash full-width">View Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="messages" class="dash-section">
+            
+            <div class="section-header-flex">
+                <div class="section-text">
+                    <h2>Inbox & Inquiries</h2>
+                    <p>Respond directly to client requests and website contact forms.</p>
+                </div>
+                <a href="./error.html" class="btn-dash">Compose New</a>
+            </div>
+
+            <div class="messages-layout">
+                
+                <div class="message-list" id="message-list-container">
+                    </div>
+
+                <div class="message-view">
+                    <div class="msg-view-header">
+                        <div>
+                            <h3 id="view-msg-name">Loading...</h3>
+                            <span id="view-msg-email">...</span>
+                        </div>
+                        <div class="msg-actions">
+                            <span id="view-msg-date" class="msg-date-display">...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="msg-view-body">
+                        <h4 id="view-msg-subject">Subject: ...</h4>
+                        <div id="view-msg-body" class="msg-body-content">
+                            </div>
+                    </div>
+                    
+                    <form action="./error.html" method="GET" class="msg-reply-box">
+                        <label for="reply-message" class="sr-only">Your Reply</label>
+                        <textarea id="reply-message" name="reply_message" placeholder="Type your response here..." class="dash-input" required></textarea>
+                        <button type="submit" class="btn-dash send-btn">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /* --- 1. Theme Toggle Logic --- */
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        function updateThemeText() {
+            if (body.classList.contains('light-theme')) {
+                themeToggleBtn.textContent = "Dark Mode";
+            } else {
+                themeToggleBtn.textContent = "Light Mode";
+            }
+        }
+        
+        updateThemeText(); // Init
+        
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            if(body.classList.contains('light-theme')){
+                localStorage.setItem('stackly-theme', 'light');
+            } else {
+                localStorage.setItem('stackly-theme', 'dark');
+            }
+            updateThemeText();
+            updateChartColors(); // Re-render charts for contrast
+        });
+
+        /* --- 2. Tab Switching Logic --- */
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const dashSections = document.querySelectorAll('.dash-section');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                dashSections.forEach(s => s.classList.remove('active'));
+                
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        /* --- 3. Chart.js Implementations --- */
+        let revenueChart, serviceChart;
+
+        function initCharts() {
+            const isLight = document.body.classList.contains('light-theme');
+            const textColor = isLight ? '#475569' : '#94a3b8';
+            const gridColor = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.05)';
+
+            // Line Chart (Revenue & Visits)
+            const ctxRev = document.getElementById('revenueChart').getContext('2d');
+            revenueChart = new Chart(ctxRev, {
+                type: 'line',
+                data: {
+                    labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                    datasets: [
+                        {
+                            label: 'Revenue ($)',
+                            data: [85000, 92000, 88000, 105000, 110000, 124500],
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Web Visits',
+                            data: [5000, 5200, 6100, 6800, 7500, 8402],
+                            borderColor: '#38bdf8',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: textColor, font: { family: "'Outfit', sans-serif" } } } },
+                    scales: {
+                        x: { ticks: { color: textColor, font: { family: "'Outfit', sans-serif" } }, grid: { color: gridColor } },
+                        y: { ticks: { color: textColor, font: { family: "'Outfit', sans-serif" } }, grid: { color: gridColor } }
+                    }
+                }
+            });
+
+            // Vertical Bar Chart (Service Distribution)
+            const ctxServ = document.getElementById('serviceChart').getContext('2d');
+            serviceChart = new Chart(ctxServ, {
+                type: 'bar',
+                data: {
+                    labels: ['Detailing', 'Tuning', 'Restoration', 'Fabrication'],
+                    datasets: [{
+                        label: 'Projects This Month',
+                        data: [45, 25, 10, 15],
+                        backgroundColor: ['#38bdf8', '#f59e0b', '#a855f7', '#2dd4bf'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: textColor, font: { family: "'Outfit', sans-serif" } }, grid: { display: false } },
+                        y: { ticks: { color: textColor, font: { family: "'Outfit', sans-serif" } }, grid: { color: gridColor } }
+                    }
+                }
+            });
+        }
+
+        // Dynamically update charts if theme is changed
+        function updateChartColors() {
+            if(!revenueChart || !serviceChart) return;
+            const isLight = document.body.classList.contains('light-theme');
+            const textColor = isLight ? '#475569' : '#94a3b8';
+            const gridColor = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.05)';
+
+            revenueChart.options.plugins.legend.labels.color = textColor;
+            revenueChart.options.scales.x.ticks.color = textColor;
+            revenueChart.options.scales.x.grid.color = gridColor;
+            revenueChart.options.scales.y.ticks.color = textColor;
+            revenueChart.options.scales.y.grid.color = gridColor;
+            revenueChart.update();
+
+            serviceChart.options.scales.x.ticks.color = textColor;
+            serviceChart.options.scales.y.ticks.color = textColor;
+            serviceChart.options.scales.y.grid.color = gridColor;
+            serviceChart.update();
+        }
+
+        window.addEventListener('load', initCharts);
+
+        /* --- 4. Messaging System Logic --- */
+        const messagesData = [
+            {
+                id: 1, name: "James Wilson", email: "james.w@email.com", date: "10:45 AM",
+                subject: "Quote for Ceramic Coating", unread: true,
+                body: "<p>Hello Stackly Team,</p><p>I recently purchased a 2025 BMW M4 and I am looking to protect the paint immediately. I saw your 'Project' plan includes ceramic coating and paint correction.</p><p>Could you provide a detailed quote and let me know your availability for next week?</p><p>Best regards,<br>James</p>"
+            },
+            {
+                id: 2, name: "Emily Blunt", email: "emily.blunt@studio.co", date: "Yesterday",
+                subject: "Restoration Update?", unread: true,
+                body: "<p>Hi team,</p><p>Just checking in on the progress of the chassis fabrication for the '69 Mustang. Did the new suspension components arrive?</p><p>Thanks,<br>Emily</p>"
+            },
+            {
+                id: 3, name: "David Chen", email: "david.c88@mail.com", date: "Oct 12",
+                subject: "Dyno Tune Appointment", unread: false,
+                body: "<p>Hello,</p><p>Can we reschedule my appointment for next Friday instead? I have a work conflict on Wednesday.</p><p>Thanks,<br>David</p>"
+            },
+            {
+                id: 4, name: "Alex Mercer", email: "alex.m@fleetcorp.com", date: "Oct 10",
+                subject: "Enterprise Fleet Servicing", unread: false,
+                body: "<p>To whom it may concern,</p><p>We have a fleet of 5 executive cars needing monthly maintenance and detailing. Please send over your Enterprise package terms.</p><p>Alex Mercer</p>"
+            }
+        ];
+
+        const msgListContainer = document.getElementById('message-list-container');
+        const viewName = document.getElementById('view-msg-name');
+        const viewEmail = document.getElementById('view-msg-email');
+        const viewDate = document.getElementById('view-msg-date');
+        const viewSubject = document.getElementById('view-msg-subject');
+        const viewBody = document.getElementById('view-msg-body');
+
+        // Render message list
+        function renderMessages(activeId) {
+            msgListContainer.innerHTML = '';
+            messagesData.forEach(msg => {
+                const isActive = msg.id === activeId;
+                const div = document.createElement('div');
+                div.className = `msg-item ${msg.unread && !isActive ? 'unread' : ''} ${isActive ? 'active-msg' : ''}`;
+                
+                div.innerHTML = `
+                    <div class="msg-header">
+                        <h4>${msg.name}</h4>
+                        <span>${msg.date}</span>
+                    </div>
+                    <p class="msg-subject">${msg.subject}</p>
+                    <p class="msg-preview">Click to view full message...</p>
+                `;
+
+                div.addEventListener('click', () => {
+                    msg.unread = false; 
+                    renderMessages(msg.id);
+                    updateMessageView(msg);
+                });
+
+                msgListContainer.appendChild(div);
+            });
+        }
+
+        // Update the right-side view panel
+        function updateMessageView(msg) {
+            viewName.textContent = msg.name;
+            viewEmail.textContent = msg.email;
+            viewDate.textContent = msg.date;
+            viewSubject.textContent = `Subject: ${msg.subject}`;
+            viewBody.innerHTML = msg.body;
+        }
+
+        // Init Messages
+        renderMessages(messagesData[0].id);
+        updateMessageView(messagesData[0]);
+
+    </script>
+</body>
+</html>

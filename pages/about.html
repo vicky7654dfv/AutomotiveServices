@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Stackly Automotive</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23f59e0b' d='M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z'/></svg>">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="loader-img">
+            <p>Loading Experience...</p>
+        </div>
+    </div>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="index.html">
+                <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
+            </a>
+        </div>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        <section class="about-hero-section">
+            <div class="overlay-dark"></div>
+            <video src="../assets/About/aboutBanner.mp4" autoplay muted loop playsinline class="hero-video"></video>
+            
+            <div class="container hero-content text-center">
+                <h1 class="typing-container">We Are <span class="typing-text" id="typewriter"></span><span class="cursor">|</span></h1>
+                <p class="fade-in">Pioneers in elite automotive restoration, tuning, and perfection.</p>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header center-aligned fade-in">
+                    <h2>Meet The Masters</h2>
+                    <p>The engineering minds and aesthetic perfectionists behind Stackly.</p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/1.webp" alt="John Doe">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">Marcus Cole</h2>
+                            
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="./error.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="./error.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>20+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>500+</strong><span>Builds</span></div>
+                            <div class="detail-item role-tag">Lead Engineer</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/2.webp" alt="Sarah Jane">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">Elena Rostova</h2>
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="./error.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>15+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>300+</strong><span>Designs</span></div>
+                            <div class="detail-item role-tag">Head of Aesthetics</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/3.webp" alt="David Smith">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">David Chen</h2>
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="./error.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>12+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>150+</strong><span>Engines</span></div>
+                            <div class="detail-item role-tag">Performance Tuner</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/4.webp" alt="Mike Ross">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">James Miller</h2>
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="./error.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>18+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>800+</strong><span>Diagnostics</span></div>
+                            <div class="detail-item role-tag">Systems Specialist</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/5.webp" alt="Rachel Zane">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">Sophia Lee</h2>
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="./error.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>10+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>200+</strong><span>Restorations</span></div>
+                            <div class="detail-item role-tag">Classic Restorer</div>
+                        </div>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-img-wrap">
+                            <img src="../assets/About/Team/6.webp" alt="Harvey Specter">
+                            <div class="overlay-gradient team-overlay"></div>
+                            <h2 class="team-name-unhover">Michael Vance</h2>
+                            <div class="team-social-hover">
+                                <a href="./error.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="./error.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item"><strong>14+</strong><span>Years Exp.</span></div>
+                            <div class="detail-item"><strong>450+</strong><span>Projects</span></div>
+                            <div class="detail-item role-tag">Paint & Body Master</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-vision-section">
+            <div class="container">
+                <div class="mv-grid">
+                    <div class="mv-block fade-in">
+                        <h2 class="mv-title">The Mission</h2>
+                        <div class="mv-text">
+                            <p>To redefine the standard of luxury automotive care through uncompromising precision, relentless innovation, and a profound respect for engineering.</p>
+                            <p>We exist to elevate the driving experience, ensuring every machine that leaves our facility performs at its absolute pinnacle. We believe that a car is not just transport, but a mechanical work of art that deserves the highest caliber of preservation and enhancement.</p>
+                        </div>
+                    </div>
+                    <div class="mv-block fade-in delay-1">
+                        <h2 class="mv-title">The Vision</h2>
+                        <div class="mv-text">
+                            <p>To be the globally recognized sanctuary for automotive excellence. A place where tradition meets futuristic technology, fostering a community of enthusiasts who demand nothing short of perfection for their vehicles.</p>
+                            <p>We envision a future where every drive is a masterpiece, and Stackly remains at the forefront of the automotive evolution, setting benchmarks that others strive to achieve in detailing, tuning, and overall vehicle dynamics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="container history-container">
+                <div class="history-img fade-in">
+                    <img src="../assets/About/historyBg.webp" alt="Stackly History">
+                    <div class="year-badge">Est. 2012</div>
+                </div>
+                <div class="history-content fade-in delay-1">
+                    <h2>A Legacy of Performance</h2>
+                    <p class="history-para">What started as a modest two-bay garage has evolved into an elite automotive sanctuary. Over the past decade, Stackly has pushed the boundaries of mechanical engineering and aesthetic detailing.</p>
+                    
+                    <div class="history-stats">
+                        <div class="h-stat">
+                            <h3>12</h3>
+                            <span>Years Active</span>
+                        </div>
+                        <div class="h-stat">
+                            <h3>1.2k</h3>
+                            <span>VIP Clients</span>
+                        </div>
+                        <div class="h-stat">
+                            <h3>35</h3>
+                            <span>Master Techs</span>
+                        </div>
+                    </div>
+                    
+                    <a href="./error.html" class="btn btn-glow">Read Full Story</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header center-aligned fade-in">
+                    <h2>Client Experiences</h2>
+                    <p>Hear from the enthusiasts who trust us with their prized possessions.</p>
+                </div>
+
+                <div class="carousel-wrapper fade-in">
+                    <div class="carousel-track" id="testimonial-track">
+                        <div class="testimonial-slide">
+                            <img src="../assets/About/Testimonial/client1.webp" alt="Client 1" class="testimonial-img">
+                            <p class="quote">"The level of detail Stackly puts into their work is simply unmatched. They completely transformed my vintage Porsche into a showroom masterpiece while maintaining its original soul."</p>
+                            <h4>Arthur Pendelton</h4>
+                            <span>Car Collector</span>
+                        </div>
+                        <div class="testimonial-slide">
+                            <img src="../assets/About/Testimonial/client2.webp" alt="Client 2" class="testimonial-img">
+                            <p class="quote">"I trust no one else with my track cars. The tuning and diagnostic precision here gave me an edge I never thought possible. Exceptional team, exceptional facility."</p>
+                            <h4>Diana Vance</h4>
+                            <span>Professional Racer</span>
+                        </div>
+                        <div class="testimonial-slide">
+                            <img src="../assets/About/Testimonial/client3.webp" alt="Client 3" class="testimonial-img">
+                            <p class="quote">"From the moment you walk in, you know your vehicle is in elite hands. The ceramic coating and interior detailing made my daily driver look better than the day I bought it."</p>
+                            <h4>Robert Sterling</h4>
+                            <span>Executive</span>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="nav-btn" id="prev-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                        <div class="dots-container" id="carousel-dots"></div>
+                        <button class="nav-btn" id="next-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo site-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    Defining the future of luxury automotive care with precision, passion, and unparalleled expertise. We are committed to maintaining the highest standards of engineering excellence.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./home2.html">Home 2</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Detailing</a></li>
+                    <li><a href="./error.html">Restoration</a></li>
+                    <li><a href="./error.html">Tuning</a></li>
+                    <li><a href="./error.html">Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 800 555 0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Join our exclusive mailing list for updates.</p>
+                <form action="./error.html" class="subscribe-form">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <button type="submit" class="btn btn-glow full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // Navigation Intercept
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        // Hamburger Menu Logic
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+            body.classList.add('menu-open'); 
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open'); 
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if(navLinks.classList.contains('showMenu')) closeMenu(); else openMenu();
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        homeNavLink.addEventListener('click', (e) => {
+            if(window.innerWidth <= 768) {
+                e.preventDefault(); e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if(document.body.classList.contains('light-theme')){
+                themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+                localStorage.setItem('stackly-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+                localStorage.setItem('stackly-theme', 'dark');
+            }
+        });
+
+        // Sticky Header
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('sticky');
+            else header.classList.remove('sticky');
+        });
+
+        // Fade in Animation
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+
+        // Live Typing Effect
+        const textArray = ["Precision.", "Craftsmanship.", "Stackly."];
+        const typingDelay = 150;
+        const erasingDelay = 100;
+        const newTextDelay = 2000;
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        const typedTextSpan = document.getElementById("typewriter");
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if(textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+
+        // Testimonial Carousel Logic
+        const track = document.getElementById('testimonial-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('next-btn');
+        const prevButton = document.getElementById('prev-btn');
+        const dotsNav = document.getElementById('carousel-dots');
+        let currentSlide = 0;
+
+        // Setup dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if(index === 0) dot.classList.add('active');
+            dot.dataset.slide = index;
+            dotsNav.appendChild(dot);
+            
+            dot.addEventListener('click', e => {
+                moveToSlide(index);
+            });
+        });
+        const dots = Array.from(dotsNav.children);
+
+        function moveToSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        nextButton.addEventListener('click', () => {
+            let targetSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+            moveToSlide(targetSlide);
+        });
+
+        prevButton.addEventListener('click', () => {
+            let targetSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+            moveToSlide(targetSlide);
+        });
+        
+        // Auto play carousel
+        setInterval(() => {
+            let targetSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+            moveToSlide(targetSlide);
+        }, 5000);
+
+    </script>
+</body>
+</html>
