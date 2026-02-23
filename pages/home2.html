@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Digital Fleet & Telemetry</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23f59e0b' d='M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z'/></svg>">
+    <link rel="stylesheet" href="../css/home2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="loader-img">
+            <p>Initializing Telemetry...</p>
+        </div>
+    </div>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
+            </a>
+        </div>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        
+        <section class="saas-hero-section">
+            <div class="overlay-dark-heavy"></div>
+            <video src="../assets/HomePage2/bg1.mp4" autoplay muted loop playsinline class="hero-video"></video>
+            
+            <div class="container hero-layout-bottom-right">
+                <div class="hero-content-right fade-in">
+                    <h1>Algorithmic Precision For Elite Fleets.</h1>
+                    <p>We combine advanced vehicle telemetry with world-class mechanical engineering to predict, prevent, and perfect your automotive experience.</p>
+                    <div class="hero-buttons">
+                        <a href="./error.html" class="btn btn-glow">Start Diagnostics</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-grid-section">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2>Core Telemetry Modules</h2>
+                    <p class="extended-para">Discover our data-driven approach to automotive longevity. We do not just fix cars; we anticipate their needs through state-of-the-art sensory arrays and big data analysis. Every module is built to ensure your vehicle is always performing at its absolute peak, minimizing downtime and maximizing output.</p>
+                </div>
+
+                <div class="niche-grid">
+                    
+                    <div class="niche-item fade-in">
+                        <div class="niche-photo-box">
+                            <img src="../assets/HomePage2/Home2Hero/1.webp" alt="Predictive Maintenance">
+                            <div class="photo-overlay"></div>
+                            
+                            <div class="state-unhover">
+                                <h1>Predictive AI</h1>
+                                <h5>Anticipating mechanical wear.</h5>
+                            </div>
+
+                            <div class="state-hover">
+                                <a href="./error.html" class="btn btn-glow">Access Module</a>
+                            </div>
+                        </div>
+                        <div class="expand-trigger" onclick="toggleExpand('expand-1')">Expand Technical Details ▼</div>
+                        <div class="expandable-content" id="expand-1">
+                            <p>Our proprietary algorithms continuously analyze your vehicle's ECU data streams, mapping stress points and fluid degradation to schedule maintenance dynamically. We utilize over 50 data points per second to catch micro-fractures in transmission gears and irregular combustion patterns before they escalate into catastrophic failures.</p>
+                        </div>
+                    </div>
+
+                    <div class="niche-item fade-in delay-1">
+                        <div class="niche-photo-box">
+                            <img src="../assets/HomePage2/Home2Hero/2.webp" alt="Live Telemetry">
+                            <div class="photo-overlay"></div>
+                            
+                            <div class="state-unhover">
+                                <h1>Live Telemetry</h1>
+                                <h5>Real-time asset tracking.</h5>
+                            </div>
+
+                            <div class="state-hover">
+                                <a href="./error.html" class="btn btn-glow">Access Module</a>
+                            </div>
+                        </div>
+                        <div class="expand-trigger" onclick="toggleExpand('expand-2')">Expand Technical Details ▼</div>
+                        <div class="expandable-content" id="expand-2">
+                            <p>Monitor your entire luxury fleet from a centralized cloud dashboard. View live metrics including oil pressure, tire temperatures, and transmission stress during track days or cross-country transport. Our 5G-enabled transmitters ensure you are never disconnected from your vehicle's vital signs, no matter where it is located on the globe.</p>
+                        </div>
+                    </div>
+
+                    <div class="niche-item fade-in delay-2">
+                        <div class="niche-photo-box">
+                            <img src="../assets/HomePage2/Home2Hero/3.webp" alt="Over The Air Updates">
+                            <div class="photo-overlay"></div>
+                            
+                            <div class="state-unhover">
+                                <h1>OTA Calibration</h1>
+                                <h5>Remote engine mapping.</h5>
+                            </div>
+
+                            <div class="state-hover">
+                                <a href="./error.html" class="btn btn-glow">Access Module</a>
+                            </div>
+                        </div>
+                        <div class="expand-trigger" onclick="toggleExpand('expand-3')">Expand Technical Details ▼</div>
+                        <div class="expandable-content" id="expand-3">
+                            <p>Seamlessly adjust shift points and fuel maps without visiting the shop. Our engineers can securely push specialized track, eco, or valet calibrations directly to your vehicle's receiver module globally. This completely eliminates geographic barriers, providing you with an on-demand pit crew directly through the cloud.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="data-upload-section">
+            <div class="container upload-layout">
+                <div class="upload-text fade-in">
+                    <h2>Submit Vehicle Data Logs</h2>
+                    <p>Upload your recent OBD-II scans, dyno sheets, or telemetry logs. Our engineering team will analyze the data and return a comprehensive performance report.</p>
+                    
+                    <div class="extra-content-box">
+                        <h4>Why Upload Your Data?</h4>
+                        <p>Our machine learning models compare your logs against a database of thousands of identical vehicles. This allows us to spot anomalies in timing pulls, fuel trims, and boost pressure that standard dealership scanners miss.</p>
+                        <p><strong>Response Time:</strong> Detailed PDF reports are generated and emailed back within 24 to 48 hours by a certified master technician.</p>
+                    </div>
+
+                    <ul class="upload-benefits">
+                        <li><span class="bullet-point"></span> Secure End-to-End Data Encryption</li>
+                        <li><span class="bullet-point"></span> Deep-Dive Analytical Feedback</li>
+                        <li><span class="bullet-point"></span> Direct Engineer Consultation</li>
+                    </ul>
+                </div>
+
+                <div class="upload-form-wrapper fade-in delay-1">
+                    <form action="./error.html" method="GET" class="saas-form">
+                        
+                        <div class="form-group">
+                            <label for="vehicle-make">Vehicle Make & Model</label>
+                            <input type="text" id="vehicle-make" name="vehicle_make" placeholder="e.g., Porsche 911 GT3 RS" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicle-vin">Vehicle Identification Number (VIN)</label>
+                            <input type="text" id="vehicle-vin" name="vehicle_vin" placeholder="17-Digit Alphanumeric Code" required minlength="17" maxlength="17">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="analysis-type">Analysis Required</label>
+                            <select id="analysis-type" name="analysis_type" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="engine-stress">Engine Stress Analysis</option>
+                                <option value="transmission">Transmission Shift Mapping</option>
+                                <option value="aerodynamics">Aero & Suspension Telemetry</option>
+                                <option value="routine">Routine Diagnostic Check</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="data-file">Upload Data File (.csv, .log, .pdf)</label>
+                            <input type="file" id="data-file" name="data_file" accept=".csv, .log, .pdf" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-glow full-width">Transmit Data to Engineering</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="fixed-bg-section">
+            <div class="fixed-overlay"></div>
+            <div class="container relative-z">
+                <div class="data-carousel-container fade-in">
+                    
+                    <div class="carousel-track" id="data-carousel-track">
+                        <div class="data-slide">
+                            <div class="slide-card">
+                                <div class="data-huge">10M+</div>
+                                <h2>Data Points Analyzed Daily</h2>
+                                <p>Processing complex engine metrics to ensure zero downtime for our exclusive clientele. We track everything from ambient intake temperatures to real-time lateral G-forces.</p>
+                                <a href="./error.html" class="btn btn-outline slide-btn">View Metrics</a>
+                            </div>
+                        </div>
+                        <div class="data-slide">
+                            <div class="slide-card">
+                                <div class="data-huge">99.9%</div>
+                                <h2>Fleet Uptime Guarantee</h2>
+                                <p>Our predictive maintenance algorithms keep your assets on the road and out of the garage. We order replacement parts before you even realize they are nearing the end of their lifecycle.</p>
+                                <a href="./error.html" class="btn btn-outline slide-btn">Read Case Study</a>
+                            </div>
+                        </div>
+                        <div class="data-slide">
+                            <div class="slide-card">
+                                <div class="data-huge">500+</div>
+                                <h2>Elite Vehicles Monitored</h2>
+                                <p>From hypercars to armored executive transports, trusted globally by collectors and corporations. Our network is the silent guardian of the world's most prestigious garages.</p>
+                                <a href="./error.html" class="btn btn-outline slide-btn">See Roster</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-nav">
+                        <button class="text-nav-btn" onclick="moveDataCarousel(-1)">PREV</button>
+                        <div class="text-dots" id="data-dots"></div>
+                        <button class="text-nav-btn" onclick="moveDataCarousel(1)">NEXT</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="company-video-section">
+            <div class="container">
+                <div class="video-split-layout">
+                    <div class="yt-container fade-in">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/chhmCdYt0iQ?si=pmQWeuNDloTa13NW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="company-context fade-in delay-1">
+                        <h2>The Stackly Philosophy</h2>
+                        <p>We are more than a mechanic shop. Stackly is a technology company operating within the automotive space. Founded by a syndicate of software engineers and master mechanics, our mission is to eradicate the guesswork from vehicle maintenance.</p>
+                        <p>By treating cars as interconnected data nodes rather than mere mechanical objects, we provide an unparalleled level of service, transparency, and performance enhancement.</p>
+                        
+                        <div class="extra-buttons-group">
+                            <a href="./error.html" class="btn btn-glow">Our History</a>
+                            <a href="./error.html" class="btn btn-glow">Meet Engineers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="footer-logo site-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    Defining the future of luxury automotive care with precision, passion, and unparalleled expertise. We are committed to maintaining the highest standards of engineering excellence.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./home2.html">Home 2</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Detailing</a></li>
+                    <li><a href="./error.html">Restoration</a></li>
+                    <li><a href="./error.html">Tuning</a></li>
+                    <li><a href="./error.html">Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 800 555 0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Join our exclusive mailing list for updates.</p>
+                <form action="./error.html" method="GET" class="subscribe-form">
+                    <label for="newsletter-email-footer" class="sr-only">Your Email</label>
+                    <input type="email" id="newsletter-email-footer" name="email" placeholder="Your Email" required autocomplete="email">
+                    <button type="submit" class="btn btn-glow full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // 2. Navigation Intercept 
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        // 3. Hamburger Menu Logic 
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+            body.classList.add('menu-open'); 
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open'); 
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if(navLinks.classList.contains('showMenu')) closeMenu(); else openMenu();
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        
+        // NEW: Click anywhere outside to close the menu
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('showMenu') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        homeNavLink.addEventListener('click', (e) => {
+            if(window.innerWidth <= 768) {
+                e.preventDefault(); e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // 4. Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('stackly-theme') === 'light') {
+            themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if(document.body.classList.contains('light-theme')){
+                themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+                localStorage.setItem('stackly-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+                localStorage.setItem('stackly-theme', 'dark');
+            }
+        });
+
+        // 5. Sticky Header
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('sticky');
+            else header.classList.remove('sticky');
+        });
+
+        // 6. Fade in Animation
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+
+        // 7. Expandable Description Toggle
+        window.toggleExpand = function(id) {
+            const content = document.getElementById(id);
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                content.style.marginTop = '0px';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.opacity = '1';
+                content.style.marginTop = '15px';
+            }
+        }
+
+        // 8. Fixed Background Carousel Logic
+        const track = document.getElementById('data-carousel-track');
+        const slides = Array.from(track.children);
+        const dotsNav = document.getElementById('data-dots');
+        let currentSlide = 0;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('text-dot');
+            if(index === 0) dot.classList.add('active');
+            dotsNav.appendChild(dot);
+            
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        const dotsArray = Array.from(dotsNav.children);
+
+        function goToSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dotsArray.forEach(d => d.classList.remove('active'));
+            dotsArray[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        window.moveDataCarousel = function(direction) {
+            let target = currentSlide + direction;
+            if (target < 0) target = slides.length - 1;
+            if (target >= slides.length) target = 0;
+            goToSlide(target);
+        }
+
+        // Auto play data carousel
+        setInterval(() => {
+            moveDataCarousel(1);
+        }, 6000);
+
+    </script>
+</body>
+</html>

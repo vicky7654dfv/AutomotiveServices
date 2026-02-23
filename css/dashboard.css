@@ -119,6 +119,7 @@ MAIN DASHBOARD LAYOUT & TABS
 .page-title {
     font-size: 3rem; text-transform: uppercase; font-weight: 800; margin: 0;
     background: linear-gradient(to right, var(--text-main), var(--text-muted));
+    background-clip: text;
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
