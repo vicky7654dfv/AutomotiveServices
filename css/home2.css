@@ -12,6 +12,7 @@
     --footer-bg: #020202;
     --border-light: rgba(255, 255, 255, 0.1);
     --input-bg: #111;
+    --error-color: #ef4444;
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s ease-in-out;
 }
@@ -27,6 +28,7 @@ body.light-theme {
     --footer-bg: #f4f4f5;
     --border-light: rgba(0, 0, 0, 0.1);
     --input-bg: #ffffff;
+    --error-color: #dc2626;
 }
 
 /* Specific sections maintain dark look (e.g. video overlays).

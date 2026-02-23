@@ -29,7 +29,7 @@
 
     <header class="headerWrap" id="main-header">
         <div class="imgWrap">
-            <a href="index.html">
+            <a href="../index.html">
                 <img src="../assets/Header/logo.webp" alt="Stackly Logo" class="site-logo">
             </a>
         </div>
@@ -51,7 +51,7 @@
                         </button>
                     </div>
                     <ul class="dropdownMenu" id="dropdown-menu">
-                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="../index.html">Home 1</a></li>
                         <li><a href="./home2.html">Home 2</a></li>
                     </ul>
                 </li>
@@ -474,8 +474,9 @@
             <div class="box">
                 <h4>Newsletter</h4>
                 <p>Join our exclusive mailing list for updates.</p>
-                <form action="./error.html" class="subscribe-form">
-                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required autocomplete="email">
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" autocomplete="email">
+                    <span id="newsletter-error" style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
                     <button type="submit" class="btn btn-glow full-width">Subscribe</button>
                 </form>
                 <div class="media">
@@ -540,6 +541,13 @@
 
         closeBtn.addEventListener('click', closeMenu);
         menuOverlay.addEventListener('click', closeMenu);
+
+        // Click outside to close menu
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('showMenu') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
 
         dropdownToggleBtn.addEventListener('click', (e) => {
             e.preventDefault(); e.stopPropagation();
@@ -618,6 +626,34 @@
                     btn.classList.add('active-faq');
                 }
             });
+        });
+
+        // Footer Newsletter Validation Logic
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stop default form submission
+            newsletterError.innerText = '';
+            newsletterEmail.style.borderColor = '';
+
+            if (newsletterEmail.value.trim() === '') {
+                newsletterError.innerText = 'Email is required';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else if (!isValidEmail(newsletterEmail.value.trim())) {
+                newsletterError.innerText = 'Please enter a valid email address';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else {
+                // Success case
+                alert("Successfully subscribed to the newsletter!");
+                newsletterEmail.value = '';
+            }
         });
     </script>
 </body>

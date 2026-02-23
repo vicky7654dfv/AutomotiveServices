@@ -327,9 +327,10 @@
             <div class="box">
                 <h4>Newsletter</h4>
                 <p>Join our exclusive mailing list for updates.</p>
-                <form action="./error.html" method="GET" class="subscribe-form">
-                    <label for="newsletter-email-footer" class="sr-only">Your Email</label>
-                    <input type="email" id="newsletter-email-footer" name="email" placeholder="Your Email" required autocomplete="email">
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <label for="newsletter-email" class="sr-only">Your Email</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" autocomplete="email">
+                    <span id="newsletter-error" style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
                     <button type="submit" class="btn btn-glow full-width">Subscribe</button>
                 </form>
                 <div class="media">
@@ -395,7 +396,7 @@
         closeBtn.addEventListener('click', closeMenu);
         menuOverlay.addEventListener('click', closeMenu);
         
-        // NEW: Click anywhere outside to close the menu
+        // CLOSE MENU ON OUTSIDE CLICK
         document.addEventListener('click', (e) => {
             if (navLinks.classList.contains('showMenu') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
                 closeMenu();
@@ -504,6 +505,34 @@
         setInterval(() => {
             moveDataCarousel(1);
         }, 6000);
+
+        // --- Footer Newsletter Validation Logic ---
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stop default form submission
+            newsletterError.innerText = '';
+            newsletterEmail.style.borderColor = '';
+
+            if (newsletterEmail.value.trim() === '') {
+                newsletterError.innerText = 'Email is required';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else if (!isValidEmail(newsletterEmail.value.trim())) {
+                newsletterError.innerText = 'Please enter a valid email address';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else {
+                // Success case
+                alert("Successfully subscribed to the newsletter!");
+                newsletterEmail.value = '';
+            }
+        });
 
     </script>
 </body>

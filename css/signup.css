@@ -130,7 +130,6 @@ body.light-theme .split-left { border-right: 1px solid rgba(0, 0, 0, 0.1); backg
 .left-content { max-width: 320px; text-align: center; }
 .brand-logo { height: 45px; margin-bottom: 15px; transition: var(--transition); }
 body.light-theme .brand-logo { filter: brightness(0); }
-.brand-logo:hover { transform: scale(1.05); }
 
 .left-content h2 { font-size: 1.6rem; color: var(--text-main); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
 .left-content p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0; }

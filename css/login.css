@@ -178,7 +178,6 @@ body.light-theme .login-info-side { background: linear-gradient(to bottom left, 
 .info-content { max-width: 280px; text-align: center; }
 .brand-logo { height: 45px; margin-bottom: 20px; transition: var(--transition); }
 body.light-theme .brand-logo { filter: brightness(0); }
-.brand-logo:hover { transform: scale(1.05); }
 
 .info-content h2 { font-size: 1.5rem; color: var(--text-main); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .info-content p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin: 0; }
